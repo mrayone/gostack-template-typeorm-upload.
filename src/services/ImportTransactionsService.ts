@@ -48,6 +48,8 @@ class ImportTransactionsService {
       });
       transactions.push(newTransaction);
     }
+
+    await fs.promises.unlink(csFilePath);
     return transactions;
   }
 }
